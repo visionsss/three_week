@@ -7,7 +7,6 @@ from selenium.webdriver.support import expected_conditions as EC  # 条件设置
 import selenium.webdriver.common.by as By
 import requests
 import pandas as pd
-
 if __name__ == '__main__':
     all_data = pd.DataFrame()
     url = 'https://movie.douban.com/subject/26581837/comments?status=P'
@@ -48,3 +47,4 @@ if __name__ == '__main__':
         all_data.to_excel('temp.xlsx')
 
         next_btn.click()  # 点击定位到的元素
+
