@@ -124,4 +124,11 @@ if __name__ == '__main__':
 
     model_svm = LinearSVC().fit(x_train_tv, y_train)
     s = model_svm.score(x_test_tv, y_test)
-    print(s)
+    from sklearn.metrics import confusion_matrix, classification_report, \
+        recall_score, precision_score
+
+    y_pre = model_svm.predict(x_test_tv)
+    print(classification_report(y_test, y_pre))
+    print(recall_score(y_test, y_pre))
+    print(precision_score(y_test, y_pre))
+    confusion_matrix(y_true=y_test, y_pred=y_pre)
